@@ -72,4 +72,3 @@ public class DeptPanel extends JPanel {
 
 
 
-
