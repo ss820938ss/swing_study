@@ -7,8 +7,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import swing_study.component.FrameComponentEx;
 import swing_study.frame.ContentPaneEx;
 import swing_study.frame.JPanelEx;
+import swing_study.layout.FrameLayout;
+import swing_study.layout.LayoutGuBun;
 
 import java.awt.GridLayout;
 import javax.swing.JButton;
@@ -27,6 +30,7 @@ public class SwingMain extends JFrame implements ActionListener {
 	private JButton btnBorderLayout;
 	private JButton btnGridLayout;
 	private JButton btnAbsoluteLayout;
+	private JButton btn03;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -48,7 +52,7 @@ public class SwingMain extends JFrame implements ActionListener {
 	private void initialize() {
 		setTitle("스윙 스터디");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(10, 10, 700, 450);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -68,19 +72,44 @@ public class SwingMain extends JFrame implements ActionListener {
 		pLayout.setLayout(new GridLayout(0, 1, 0, 10));
 		
 		btnFlowLayout = new JButton("플로우 레이아웃");
+		btnFlowLayout.addActionListener(this);
+//		btnFlowLayout.addActionListener(e -> new FrameLayout(LayoutGuBun.FLOW));
+		
 		pLayout.add(btnFlowLayout);
 		
 		btnBorderLayout = new JButton("보더 레이아웃");
+		btnBorderLayout.addActionListener(this);
 		pLayout.add(btnBorderLayout);
 		
 		btnGridLayout = new JButton("그리드 레이아웃");
+		btnGridLayout.addActionListener(this);
 		pLayout.add(btnGridLayout);
 		
 		btnAbsoluteLayout = new JButton("절대 레이아웃");
+		btnAbsoluteLayout.addActionListener(this);
 		pLayout.add(btnAbsoluteLayout);
+		
+		btn03 = new JButton("JComponent 공통 속성");
+		btn03.addActionListener(this);
+		contentPane.add(btn03);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn03) {
+			actionPerformedBtn03(e);
+		}
+		if (e.getSource() == btnAbsoluteLayout) {
+			actionPerformedBtnAbsoluteLayout(e);
+		}
+		if (e.getSource() == btnGridLayout) {
+			actionPerformedBtnGridLayout(e);
+		}
+		if (e.getSource() == btnBorderLayout) {
+			actionPerformedBtnBorderLayout(e);
+		}
+		if (e.getSource() == btnFlowLayout) {
+			actionPerformedBtnFlowLayout(e);
+		}
 		if (e.getSource() == btn02) {
 			actionPerformedBtn02(e);
 		}
@@ -94,6 +123,26 @@ public class SwingMain extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedBtn02(ActionEvent e) {
 		JPanelEx frame = new JPanelEx();
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtnFlowLayout(ActionEvent e) {
+		FrameLayout frame = new FrameLayout(LayoutGuBun.FLOW);
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtnBorderLayout(ActionEvent e) {
+		FrameLayout frame = new FrameLayout(LayoutGuBun.BORDER);
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtnGridLayout(ActionEvent e) {
+		FrameLayout frame = new FrameLayout(LayoutGuBun.GRID);
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtnAbsoluteLayout(ActionEvent e) {
+		FrameLayout frame = new FrameLayout(LayoutGuBun.ABSOLUTE);
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtn03(ActionEvent e) {
+		FrameComponentEx frame = new FrameComponentEx();
 		frame.setVisible(true);
 	}
 }
