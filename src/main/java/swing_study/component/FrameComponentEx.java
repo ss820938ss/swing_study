@@ -95,4 +95,5 @@ public class FrameComponentEx extends JFrame implements ActionListener {
 			btn3.setVisible(true);
 		}
 	}
+	
 }
