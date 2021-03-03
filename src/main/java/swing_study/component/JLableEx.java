@@ -30,7 +30,7 @@ public class JLableEx extends JFrame {
 		setContentPane(contentPane);
 		
 		JLabel lb1 = new JLabel("");
-		lb1.setIcon(new ImageIcon(path+"un3.jpg"));
+		lb1.setIcon(new ImageIcon(path+"un2.jpg"));
 		lb1.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lb1, BorderLayout.NORTH);
 		
@@ -40,7 +40,7 @@ public class JLableEx extends JFrame {
 		contentPane.add(lb2, BorderLayout.CENTER);
 		
 		JLabel lb3 = new JLabel("사랑합니다.");
-		lb3.setIcon(new ImageIcon(path+"un2.jpg"));
+		lb3.setIcon(new ImageIcon(path+"un3.jpg"));
 		lb3.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lb3, BorderLayout.SOUTH);
 	}
