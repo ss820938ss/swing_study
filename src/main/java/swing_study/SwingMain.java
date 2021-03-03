@@ -1,11 +1,15 @@
 package swing_study;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
 
 import swing_study.component.FrameComponentEx;
 import swing_study.component.JLableEx;
@@ -13,13 +17,6 @@ import swing_study.frame.ContentPaneEx;
 import swing_study.frame.JPanelEx;
 import swing_study.layout.FrameLayout;
 import swing_study.layout.LayoutGuBun;
-
-import java.awt.GridLayout;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.border.TitledBorder;
-import javax.swing.BoxLayout;
 import javax.swing.UIManager;
 import java.awt.Color;
 
@@ -34,7 +31,7 @@ public class SwingMain extends JFrame implements ActionListener {
 	private JButton btnGridLayout;
 	private JButton btnAbsoluteLayout;
 	private JButton btn03;
-	private JPanel pComponent;
+	private JPanel pComponent1;
 	private JButton btn04;
 	private JButton btn05;
 	private JButton btn06;
@@ -100,20 +97,20 @@ public class SwingMain extends JFrame implements ActionListener {
 		btn03.addActionListener(this);
 		contentPane.add(btn03);
 		
-		pComponent = new JPanel();
-		pComponent.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "JLable+JButton+JToggle", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		contentPane.add(pComponent);
-		pComponent.setLayout(new GridLayout(0, 1, 0, 1));
+		pComponent1 = new JPanel();
+		pComponent1.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "JLabel & JButton & JToggleButton", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		contentPane.add(pComponent1);
+		pComponent1.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		btn04 = new JButton("JLable");
+		btn04 = new JButton("JLabel");
 		btn04.addActionListener(this);
-		pComponent.add(btn04);
+		pComponent1.add(btn04);
 		
 		btn05 = new JButton("JButton");
-		pComponent.add(btn05);
+		pComponent1.add(btn05);
 		
-		btn06 = new JButton("JToggle");
-		pComponent.add(btn06);
+		btn06 = new JButton("JToggleButton");
+		pComponent1.add(btn06);
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -170,6 +167,7 @@ public class SwingMain extends JFrame implements ActionListener {
 		FrameComponentEx frame = new FrameComponentEx();
 		frame.setVisible(true);
 	}
+	
 	protected void actionPerformedBtn04(ActionEvent e) {
 		JLableEx frame = new JLableEx();
 		frame.setVisible(true);
