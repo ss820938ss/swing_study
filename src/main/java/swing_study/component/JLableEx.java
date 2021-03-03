@@ -34,12 +34,12 @@ public class JLableEx extends JFrame {
 		lb1.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lb1, BorderLayout.NORTH);
 		
-		JLabel lb2 = new JLabel("New label");
+		JLabel lb2 = new JLabel("보고싶으면 전화하세요.");
 		lb2.setIcon(new ImageIcon(path+"un1.jpg"));
 		lb2.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lb2, BorderLayout.CENTER);
 		
-		JLabel lb3 = new JLabel("New label");
+		JLabel lb3 = new JLabel("사랑합니다.");
 		lb3.setIcon(new ImageIcon(path+"un2.jpg"));
 		lb3.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lb3, BorderLayout.SOUTH);
