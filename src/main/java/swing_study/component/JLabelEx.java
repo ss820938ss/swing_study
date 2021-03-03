@@ -1,21 +1,21 @@
 package swing_study.component;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.File;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.SwingConstants;
-import javax.swing.ImageIcon;
-import java.awt.Color;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseEvent;
+import javax.swing.border.EmptyBorder;
 
-public class JLableEx extends JFrame implements MouseListener {
+@SuppressWarnings("serial")
+public class JLabelEx extends JFrame implements MouseListener {
 
 	private JPanel contentPane;
 	private String path = System.getProperty("user.dir") + File.separator + "images" + File.separator;
@@ -23,7 +23,7 @@ public class JLableEx extends JFrame implements MouseListener {
 	private JLabel lblCenter;
 	private JLabel lblSouth;
 	
-	public JLableEx() {
+	public JLabelEx() {
 		System.out.println(path+"suji.jpg");
 		initialize();
 	}
@@ -45,14 +45,14 @@ public class JLableEx extends JFrame implements MouseListener {
 		contentPane.add(lblNorth, BorderLayout.NORTH);
 		
 		lblCenter = new JLabel("");
-		lblCenter.setIcon(new ImageIcon(path+"un1.jpg"));
+		lblCenter.setIcon(new ImageIcon(path+"suji.jpg"));
 		lblCenter.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblCenter, BorderLayout.CENTER);
 		
 		lblSouth = new JLabel("보고싶으면 전화하세요");
 		lblSouth.setBackground(Color.GREEN);
 		lblSouth.setOpaque(true);
-		lblSouth.setIcon(new ImageIcon(path+"un5.jpg"));
+		lblSouth.setIcon(new ImageIcon(path+"lyy.jpg"));
 		lblSouth.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblSouth, BorderLayout.SOUTH);
 	}

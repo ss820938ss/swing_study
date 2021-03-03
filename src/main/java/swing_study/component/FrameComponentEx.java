@@ -76,6 +76,7 @@ public class FrameComponentEx extends JFrame implements ActionListener {
 			btn2.setEnabled(true);
 		}
 	}
+	
 	protected void actionPerformedBtn2(ActionEvent e) {
 		if (btn1 != null) {
 			contentPane.remove(btn1);
@@ -86,8 +87,8 @@ public class FrameComponentEx extends JFrame implements ActionListener {
 			contentPane.add(btn1, 0);
 			revalidate();
 		}
-		
 	}
+	
 	protected void actionPerformedBtn(ActionEvent e) {
 		if (btn3.isVisible()) {
 			btn3.setVisible(false);
@@ -95,5 +96,4 @@ public class FrameComponentEx extends JFrame implements ActionListener {
 			btn3.setVisible(true);
 		}
 	}
-	
 }
