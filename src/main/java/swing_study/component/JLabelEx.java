@@ -45,14 +45,14 @@ public class JLabelEx extends JFrame implements MouseListener {
 		contentPane.add(lblNorth, BorderLayout.NORTH);
 		
 		lblCenter = new JLabel("");
-		lblCenter.setIcon(new ImageIcon(path+"suji.jpg"));
+		lblCenter.setIcon(new ImageIcon(path+"ryan.jpg"));
 		lblCenter.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblCenter, BorderLayout.CENTER);
 		
 		lblSouth = new JLabel("보고싶으면 전화하세요");
 		lblSouth.setBackground(Color.GREEN);
 		lblSouth.setOpaque(true);
-		lblSouth.setIcon(new ImageIcon(path+"lyy.jpg"));
+		lblSouth.setIcon(new ImageIcon(path+"nick.jpg"));
 		lblSouth.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lblSouth, BorderLayout.SOUTH);
 	}
@@ -72,7 +72,7 @@ public class JLabelEx extends JFrame implements MouseListener {
 	}
 	
 	protected void mouseClickedLblNorth(MouseEvent e) {
-		lblCenter.setIcon(new ImageIcon(path+"lyy.jpg"));
+		lblCenter.setIcon(new ImageIcon(path+"nick.jpg"));
 		lblSouth.setText("010-1234-1234");
 		JOptionPane.showMessageDialog(null, "변경 완료");
 	}

@@ -19,6 +19,7 @@ import swing_study.component.JCheckBoxCustomEx;
 import swing_study.component.JCheckBoxEx;
 import swing_study.component.JLabelEx;
 import swing_study.component.JRadioButtonEx;
+import swing_study.component.JTextFiledAreaEx;
 import swing_study.frame.ContentPaneEx;
 import swing_study.frame.JPanelEx;
 import swing_study.layout.FrameLayout;
@@ -44,6 +45,8 @@ public class SwingMain extends JFrame implements ActionListener {
 	private JPanel pCheckRadio;
 	private JButton btn06;
 	private JButton btn07;
+	private final JPanel panel = new JPanel();
+	private JButton btn08;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -131,9 +134,19 @@ public class SwingMain extends JFrame implements ActionListener {
 		btn07 = new JButton("JRadioButton");
 		btn07.addActionListener(this);
 		pCheckRadio.add(btn07);
+		panel.setBorder(new TitledBorder(null, "\uD14D\uC2A4\uD2B8 \uD544\uB4DC", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		contentPane.add(panel);
+		
+		btn08 = new JButton("텍스트 필드");
+		btn08.addActionListener(this);
+		btn08.setToolTipText("");
+		panel.add(btn08);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn08) {
+			actionPerformedBtn08(e);
+		}
 		if (e.getSource() == btn07) {
 			actionPerformedBtn07(e);
 		}
@@ -222,6 +235,10 @@ public class SwingMain extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedBtn07(ActionEvent e) {
 		JRadioButtonEx frame = new JRadioButtonEx();
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtn08(ActionEvent e) {
+		JTextFiledAreaEx frame = new JTextFiledAreaEx();
 		frame.setVisible(true);
 	}
 }
