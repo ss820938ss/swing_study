@@ -17,12 +17,15 @@ import javax.swing.JList;
 import java.awt.Color;
 import java.awt.SystemColor;
 import javax.swing.AbstractListModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class Tmain extends JFrame {
+public class Tmain extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField m01_Search_TF01;
 	private JTextField m01_Search_TF02;
+	private JButton btn_m_rental;
 
 	/**
 	 * Launch the application.
@@ -68,7 +71,8 @@ public class Tmain extends JFrame {
 		fl_p_m01_btn.setAlignment(FlowLayout.LEFT);
 		main_01.add(p_m01_btn, BorderLayout.NORTH);
 		
-		JButton btn_m_rental = new JButton("대출하기");
+		btn_m_rental = new JButton("대출하기");
+		btn_m_rental.addActionListener(this);
 		btn_m_rental.setForeground(SystemColor.windowBorder);
 		p_m01_btn.add(btn_m_rental);
 		
@@ -147,4 +151,13 @@ public class Tmain extends JFrame {
 		panel_3.add(list_1);
 	}
 
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn_m_rental) {
+			actionPerformedBtn_m_rental(e);
+		}
+	}
+	protected void actionPerformedBtn_m_rental(ActionEvent e) {
+		Trental frame = new Trental();
+		frame.setVisible(true);
+	}
 }
