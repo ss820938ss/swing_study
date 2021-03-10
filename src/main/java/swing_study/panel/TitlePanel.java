@@ -18,7 +18,7 @@ public class TitlePanel extends JPanel {
 	
 	private void initialize() {
 		setBorder(new TitledBorder(null, "직책정보", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		setLayout(new GridLayout(0, 2, 0, 0));
+		setLayout(new GridLayout(0, 2, 10, 0));
 		
 		JLabel lblNo = new JLabel("직책번호");
 		lblNo.setHorizontalAlignment(SwingConstants.RIGHT);

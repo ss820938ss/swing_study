@@ -1,3 +1,4 @@
+  
 package swing_study;
 
 import java.awt.Color;
@@ -23,6 +24,7 @@ import swing_study.component.JComboBoxEx1;
 import swing_study.component.JComboBoxEx2;
 import swing_study.component.JComboBoxEx3;
 import swing_study.component.JLabelEx;
+import swing_study.component.JLabelEx1;
 import swing_study.component.JListEx;
 import swing_study.component.JListEx2;
 import swing_study.component.JListEx3;
@@ -30,6 +32,7 @@ import swing_study.component.JRadioButtonEx;
 import swing_study.component.JSliderEx;
 import swing_study.component.JSpinnerEx;
 import swing_study.component.JTabbedPaneEx;
+import swing_study.component.JTableEx;
 import swing_study.component.JTextFieldAreaEx;
 import swing_study.frame.ContentPaneEx;
 import swing_study.frame.JPanelEx;
@@ -72,6 +75,8 @@ public class SwingMain extends JFrame implements ActionListener {
 	private JButton btn16;
 	private JPanel panel;
 	private JButton btn17;
+	private JButton btn0402;
+	private JButton btn18;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -146,6 +151,10 @@ public class SwingMain extends JFrame implements ActionListener {
 
 		btn05 = new JButton("JButton & JToggleButton");
 		btn05.addActionListener(this);
+		
+		btn0402 = new JButton("JLabel_size");
+		btn0402.addActionListener(this);
+		pComponent1.add(btn0402);
 		pComponent1.add(btn05);
 
 		pCheckRadio = new JPanel();
@@ -227,15 +236,26 @@ public class SwingMain extends JFrame implements ActionListener {
 		pSpinner.add(btn16, BorderLayout.CENTER);
 		
 		panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "JTabbedPane", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "JTabbedPane & JTable", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		contentPane.add(panel);
 		
 		btn17 = new JButton("JTtabedpane");
 		btn17.addActionListener(this);
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		panel.add(btn17);
+		
+		btn18 = new JButton("JTable");
+		btn18.addActionListener(this);
+		panel.add(btn18);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btn18) {
+			actionPerformedBtn18(e);
+		}
+		if (e.getSource() == btn0402) {
+			actionPerformedBtn0402(e);
+		}
 		if (e.getSource() == btn17) {
 			actionPerformedBtn17(e);
 		}
@@ -409,6 +429,14 @@ public class SwingMain extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedBtn17(ActionEvent e) {
 		JTabbedPaneEx frame = new JTabbedPaneEx();
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtn0402(ActionEvent e) {
+		JLabelEx1 frame = new JLabelEx1();
+		frame.setVisible(true);
+	}
+	protected void actionPerformedBtn18(ActionEvent e) {
+		JTableEx frame = new JTableEx();
 		frame.setVisible(true);
 	}
 }

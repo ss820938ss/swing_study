@@ -68,3 +68,10 @@ public class DeptPanel extends JPanel {
 		tfFloor.setText("");
 	}
 }
+
+
+
+
+
+
+

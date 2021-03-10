@@ -134,7 +134,7 @@ public class EmployeePanel extends JPanel {
 		
 		JLabel lblPIc = new JLabel("");
 		lblPIc.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPIc.setIcon(new ImageIcon("C:\\workspace_java\\swing_study\\images\\ryan.jpg"));
+		lblPIc.setIcon(new ImageIcon("C:\\workspace_java\\swing_study\\images\\suji.jpg"));
 		lblPIc.setPreferredSize(new Dimension(100, 120));
 		pPic.add(lblPIc, BorderLayout.CENTER);
 		
