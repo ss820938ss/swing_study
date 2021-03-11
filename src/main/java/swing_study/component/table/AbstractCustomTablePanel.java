@@ -16,7 +16,7 @@ import javax.swing.table.TableRowSorter;
 
 @SuppressWarnings("serial")
 public abstract class AbstractCustomTablePanel<T> extends JPanel {
-	private JTable table;
+	protected JTable table;
 
 	public AbstractCustomTablePanel() {
 		initialize();
