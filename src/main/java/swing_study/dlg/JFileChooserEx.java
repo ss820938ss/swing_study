@@ -62,12 +62,12 @@ public class JFileChooserEx extends JFrame implements ActionListener {
     private void actionPerformedBtnSave(ActionEvent e) {
         // download 폴더에 JLabel에 있는 이미지를 저장되도록 만약 download폴더가 존재하지 않으면 생성후 저장되도록 하세요.
 
-        int res = chooser.showSaveDialog(null);
-
-        if (res != JFileChooser.APPROVE_OPTION) {
-            JOptionPane.showMessageDialog(null, "파일을 선택하지 않았습니다", "경고", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
+//        int res = chooser.showSaveDialog(null);
+//
+//        if (res != JFileChooser.APPROVE_OPTION) {
+//            JOptionPane.showMessageDialog(null, "파일을 선택하지 않았습니다", "경고", JOptionPane.WARNING_MESSAGE);
+//            return;
+//        }
 
         ImageIcon icon = (ImageIcon) lblImg.getIcon();
         BufferedImage bi = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(), BufferedImage.TYPE_INT_RGB);
@@ -76,12 +76,22 @@ public class JFileChooserEx extends JFrame implements ActionListener {
         g2.drawImage(icon.getImage(), 0, 0, null);
         g2.dispose();
         
-        String chooseFilePath = chooser.getSelectedFile().getPath();
-        String extStr = chooseFilePath.substring(chooseFilePath.lastIndexOf(".") + 1);
+//        String chooseFilePath = chooser.getSelectedFile().getPath();
+//        String extStr = chooseFilePath.substring(chooseFilePath.lastIndexOf(".") + 1);
 
+        String filePath = System.getProperty("user.dir") + File.separator + "/download/";
+        String fileName = "test.jpg";
+        String extStr = "jpg";
+
+        File dir = new File(filePath);
+        if (!dir.exists()) {
+            dir.mkdir();
+        }
+        
+        File file = new File(dir,fileName);
         try {
-            ImageIO.write(bi, extStr, new File(chooseFilePath));
-            JOptionPane.showMessageDialog(null, chooseFilePath+" 에 저장되었습니다");
+            ImageIO.write(bi, extStr, file);
+            JOptionPane.showMessageDialog(null, filePath+" 에 저장되었습니다");
         } catch (IOException e1) {
             e1.printStackTrace();
         }
